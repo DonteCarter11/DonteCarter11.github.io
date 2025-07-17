@@ -160,8 +160,9 @@ nav,
   background-color: #242424;
 }
 
-.dark-theme #personal-logo {
-  filter: none;
+.dark-theme #personal-logo,
+.dark-theme .footer__logo--img {
+  filter: invert(1);
 }
 
 .dark-theme .scroll__icon {
@@ -293,7 +294,7 @@ nav {
 #personal-logo {
   width: 50px;
   height: 50px;
-  filter: invert(1);
+  filter: invert(0);
 }
 
 .nav__link--list {
@@ -501,6 +502,10 @@ MODAL
 PROJECTS
 
 */
+
+.project {
+  margin-bottom: 10px;
+}
 
 .section__title {
   text-align: center;
