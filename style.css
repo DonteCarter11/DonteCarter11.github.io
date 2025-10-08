@@ -704,6 +704,7 @@ rocket
   transform: translateY(-50%); /* Centers vertically */
   width: 400px;
   height: 400px;
+  z-index: -10000;
  animation: rocketLaunch 1.5s ease-out forwards;
   opacity: 0;
 }
