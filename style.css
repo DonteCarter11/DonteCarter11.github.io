@@ -287,6 +287,20 @@ LANDING PAGE
     transform: translateY(-3px);
   }
 }
+@keyframes rocketLaunch {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(200px) rotate(-45deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+}
+
 
 /*
 
@@ -680,6 +694,19 @@ SHAPES
   left: 80vw;
 }
 
+/*
+rocket
+*/
+.rocket__loader{
+ position: absolute;
+  right: -50px; /* Adjust to position it to the right */
+  top: 50%;
+  transform: translateY(-50%); /* Centers vertically */
+  width: 400px;
+  height: 400px;
+ animation: rocketLaunch 1.5s ease-out forwards;
+  opacity: 0;
+}
 /* 
 
 SMALL PHONES, TABLETS, LARGE SMART PHONES
