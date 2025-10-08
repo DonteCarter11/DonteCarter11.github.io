@@ -2,7 +2,6 @@
 //service_hkb1lup
 //NkSsWG7rq8T-jrtSf
 
-
 let isModalOpen = false;
 let contrastToggle = false;
 const scaleFactor = 1 / 20
@@ -60,3 +59,23 @@ function toggleModal() {
   isModalOpen = true;
   document.body.classList += " modal--open";
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const projects = document.querySelectorAll('.project');
+  
+  projects.forEach(project => {
+    project.style.cursor = 'pointer';
+    
+    project.addEventListener('click', function(e) {
+      if (e.target.closest('a')) {
+        return;
+      }
+      
+      const liveLink = this.querySelector('.fa-link')?.parentElement;
+      
+      if (liveLink) {
+        window.open(liveLink.href, '_blank');
+      }
+    });
+  });
+});
