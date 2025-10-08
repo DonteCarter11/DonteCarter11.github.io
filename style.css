@@ -211,6 +211,7 @@ LANDING PAGE
   width: 100%;
   max-width: 1000px;
   padding: 0 30px;
+   overflow: hidden;
 }
 
 .header__para {
@@ -718,6 +719,8 @@ SMALL PHONES, TABLETS, LARGE SMART PHONES
 @media (max-width: 768px) {
   .title {
     font-size: 80px;
+       position: relative; /* Add this */
+    overflow: visible; /* Add this */
   }
   .header-para {
     font-size: 20px;
