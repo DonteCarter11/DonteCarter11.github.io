@@ -1,7 +1,10 @@
 //template_uv8okwi
 //service_hkb1lup
 //NkSsWG7rq8T-jrtSf
+    import { inject } from '@vercel/analytics';
 
+    // Call this once in your application's entry point
+    inject();
 let isModalOpen = false;
 let contrastToggle = false;
 const scaleFactor = 1 / 20
