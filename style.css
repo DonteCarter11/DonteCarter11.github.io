@@ -698,15 +698,16 @@ SHAPES
 rocket
 */
 .rocket__loader{
- position: absolute;
-  right: -50px; /* Adjust to position it to the right */
+   position: absolute;
+  right: -50px;
   top: 50%;
-  transform: translateY(-50%); /* Centers vertically */
+  transform: translateY(-50%);
   width: 400px;
   height: 400px;
   z-index: -10000;
- animation: rocketLaunch 1.5s ease-out forwards;
+  animation: rocketLaunch 1.5s ease-out forwards;
   opacity: 0;
+  max-width: 200px; 
 }
 /* 
 
