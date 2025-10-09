@@ -553,6 +553,21 @@ PROJECTS
   filter: blur(5px);
 }
 
+* Mobile touch active state for projects */
+.project__wrapper.project--active .project__img {
+  transform: scale(1.07);
+  filter: blur(5px);
+}
+
+.project__wrapper.project--active .project__description {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.project__wrapper.project--active .project__wrapper--bg {
+  opacity: 0.7;
+}
+
 .project__description {
   position: absolute;
   top: 50%;
@@ -709,6 +724,15 @@ SMALL PHONES, TABLETS, LARGE SMART PHONES
   .modal__half {
     width: 100%;
   }
+   .project__description--link {
+    padding: 8px;
+    display: inline-block;
+  }
+  
+  .project__wrapper {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 /*
@@ -740,5 +764,13 @@ small phones
   }
   .modal__half {
     padding: 40px;
+  }
+  .project__wrapper.project--active .project__description {
+    transform: translateY(-50%);
+  }
+  
+  .project__description--link {
+    padding: 12px;
+    font-size: 24px;
   }
 }

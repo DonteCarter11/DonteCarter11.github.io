@@ -2,10 +2,58 @@
 //service_hkb1lup
 //NkSsWG7rq8T-jrtSf
 
-
 let isModalOpen = false;
 let contrastToggle = false;
-const scaleFactor = 1 / 20
+const scaleFactor = 1 / 20;
+
+// Mobile touch handling for project cards
+document.addEventListener('DOMContentLoaded', function() {
+  const projects = document.querySelectorAll('.project__wrapper');
+  
+  projects.forEach(project => {
+    let isActive = false;
+    
+    // Handle touch events for mobile
+    project.addEventListener('touchstart', function(e) {
+      // If this project is already active, let the touch pass through
+      if (isActive) {
+        return;
+      }
+      
+      // Prevent the default behavior and stop propagation
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Close all other projects
+      projects.forEach(p => {
+        if (p !== project) {
+          p.classList.remove('project--active');
+        }
+      });
+      
+      // Toggle this project
+      project.classList.add('project--active');
+      isActive = true;
+    });
+    
+    // Handle clicks on links within the project description
+    const links = project.querySelectorAll('.project__description--link');
+    links.forEach(link => {
+      link.addEventListener('touchstart', function(e) {
+        e.stopPropagation();
+      });
+    });
+  });
+  
+  // Close active project when touching outside
+  document.addEventListener('touchstart', function(e) {
+    if (!e.target.closest('.project__wrapper')) {
+      projects.forEach(project => {
+        project.classList.remove('project--active');
+      });
+    }
+  });
+});
 
 // function moveBackground(event) {
 //   const shapes = document.querySelectorAll(".shape");
